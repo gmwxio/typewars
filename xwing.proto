@@ -1,9 +1,19 @@
 //snubfigher.proto
 syntax = "proto3";
 
-package snub.figher;
+package snub.fighter;
 
 option go_package = "typewars/pb";
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.FileOptions {
+    Script file = 50000;
+}
+
+message Script {
+    repeated Xwing xwing = 1;
+}
 
 message Xwing {
     string Pilot = 1;

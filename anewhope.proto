@@ -1,0 +1,23 @@
+//anewhope.proto
+syntax = "proto3";
+
+package a.new.hope;
+option go_package = "typewars/pb";
+
+import "xwing.proto";
+
+option (snub.fighter.file) = {
+    xwing: { 
+      Pilot: "Luke"
+      AstroDroid: "R2D2"
+    }
+    xwing: [
+      { 
+        Pilot: "Gold Leader"
+        AstroDroid: "R5D3"
+      },{
+        Pilot: "Wedge"
+        AstroDroid: "Q5C9"
+      }
+    ]
+};
