@@ -6,7 +6,6 @@ package snub.fighter;
 option go_package = "typewars/pb";
 
 import "google/protobuf/descriptor.proto";
-import "starwars.proto";
 
 extend google.protobuf.FileOptions {
     Script file = 50000;
@@ -17,27 +16,14 @@ message Script {
 }
 
 message Prop {
-    oneof AProp {
-        Xwings xwings = 1;
-        C3PO c3p0 = 2 [(starwars.semantics.field).r2d2_must_be_in_act = true];
-    }
+    Xwings xwings = 1;
     //
     message Xwings {
         repeated Xwing xwingies = 1;
         //
         message Xwing {
             string Pilot = 1;
-            string AstroDroid = 2 [(starwars.semantics.field).if_astro_droid_is_r2d2_c3po_must_be_in_act = true];
-        }        
-    }
-    message C3PO {
-        StateOfDress dress = 1;
-        string location = 2;
-        //
-        enum StateOfDress {
-            STATEOFDRESS_DRESSED = 0;
-            STATEOFDRESS_INPIECES = 1;
-            STATEOFDRESS_NAKED = 2;
+            string AstroDroid = 2;
         }
     }
 }
