@@ -1,0 +1,18 @@
+//snubfigher.proto
+syntax = "proto3";
+
+package starwars.semantics;
+
+option go_package = "typewars/pb/meta";
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.FieldOptions {
+    FieldSemantics field = 50001;
+}
+
+message FieldSemantics {
+    bool if_astro_droid_is_r2d2_c3po_must_be_in_act = 1;
+    bool r2d2_must_be_in_act = 2;
+}
+
