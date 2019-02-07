@@ -1,0 +1,13 @@
+//snubfigher.proto
+syntax = "proto3";
+
+package snub.figher;
+
+option go_package = "typewars/pb";
+
+message Xwing {
+    string Pilot = 1;
+    string AstroDroid = 2;
+}
+
+
